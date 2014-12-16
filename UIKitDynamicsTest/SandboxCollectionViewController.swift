@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreMotion
 
 let reuseIdentifier = "SandCell"
 
@@ -14,6 +15,7 @@ class SandboxCollectionViewController: UIViewController, UICollectionViewDataSou
 
     @IBOutlet private var collectionView: UICollectionView!
     @IBOutlet private var tagGesture : UIGestureRecognizer!
+    private let motion = CMMotionManager()
     private var sands: [CGPoint] = []
     
     override func viewDidLoad() {
@@ -38,6 +40,22 @@ class SandboxCollectionViewController: UIViewController, UICollectionViewDataSou
         super.viewDidLayoutSubviews()
         
         (self.collectionView.collectionViewLayout as? SandboxLayout)?.setCollision()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        self.motion.startDeviceMotionUpdatesToQueue(NSOperationQueue(), withHandler: { (motion: CMDeviceMotion!, error: NSError!) in
+            if motion != nil {
+                (self.collectionView.collectionViewLayout as? SandboxLayout)?.gravity.angle = CGFloat(motion.attitude.yaw + M_PI_2)
+            }
+        })
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.motion.stopDeviceMotionUpdates()
     }
 
     /*
