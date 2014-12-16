@@ -24,6 +24,7 @@ class SandboxLayout: UICollectionViewLayout, UIDynamicAnimatorDelegate {
     private let dynamicItem = UIDynamicItemBehavior()
     
     lazy var animator : UIDynamicAnimator = {
+        self.collision.translatesReferenceBoundsIntoBoundary = true
         self.dynamicItem.elasticity = 1.0
         self.dynamicItem.resistance = 1.0
         
@@ -42,14 +43,6 @@ class SandboxLayout: UICollectionViewLayout, UIDynamicAnimatorDelegate {
         self.sandBoxDelegate = self.controller
     }
     
-    func setCollision() {
-        let f = self.collectionView!.bounds
-        self.collision.addBoundaryWithIdentifier("bottom", fromPoint: CGPoint(x: 0, y: f.height), toPoint: CGPoint(x: f.width, y: f.height))
-        self.collision.addBoundaryWithIdentifier("left", fromPoint: CGPoint(x: 0, y: 0), toPoint: CGPoint(x: 0, y: f.height))
-        self.collision.addBoundaryWithIdentifier("right", fromPoint: CGPoint(x: f.width, y: 0), toPoint: CGPoint(x: f.width, y: f.height))
-        self.collision.addBoundaryWithIdentifier("top", fromPoint: CGPoint(x: 0, y: 0), toPoint: CGPoint(x: f.width, y: 0))        
-    }
-
     override func collectionViewContentSize() -> CGSize {
         if let view = self.collectionView {
             return view.bounds.size
@@ -91,7 +84,4 @@ class SandboxLayout: UICollectionViewLayout, UIDynamicAnimatorDelegate {
             }
         }
     }
-    
-    // MARK: - UIDynamicAnimatorDelegate
-
 }

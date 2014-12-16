@@ -38,8 +38,6 @@ class SandboxCollectionViewController: UIViewController, UICollectionViewDataSou
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-        (self.collectionView.collectionViewLayout as? SandboxLayout)?.setCollision()
     }
     
     override func viewDidAppear(animated: Bool) {
