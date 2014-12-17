@@ -18,6 +18,7 @@
 		83820D361A409862009E91D3 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83820D351A409862009E91D3 /* HomeTableViewController.swift */; };
 		83820D381A409C34009E91D3 /* DropTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83820D371A409C34009E91D3 /* DropTransition.swift */; };
 		83820D3A1A40A0F8009E91D3 /* DropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83820D391A40A0F8009E91D3 /* DropViewController.swift */; };
+		83820D3D1A4194F0009E91D3 /* HockeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83820D3C1A4194F0009E91D3 /* HockeyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		83820D351A409862009E91D3 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		83820D371A409C34009E91D3 /* DropTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropTransition.swift; sourceTree = "<group>"; };
 		83820D391A40A0F8009E91D3 /* DropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropViewController.swift; sourceTree = "<group>"; };
+		83820D3C1A4194F0009E91D3 /* HockeyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HockeyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				836676411A32D972009B31C3 /* AppDelegate.swift */,
 				83820D351A409862009E91D3 /* HomeTableViewController.swift */,
 				83820D321A4097C4009E91D3 /* DropTransition */,
+				83820D3B1A419380009E91D3 /* Hockey */,
 				836676631A32D9F4009B31C3 /* Sandbox */,
 				836676471A32D972009B31C3 /* Main.storyboard */,
 				8366764A1A32D972009B31C3 /* Images.xcassets */,
@@ -141,6 +144,14 @@
 				83820D391A40A0F8009E91D3 /* DropViewController.swift */,
 			);
 			name = DropTransition;
+			sourceTree = "<group>";
+		};
+		83820D3B1A419380009E91D3 /* Hockey */ = {
+			isa = PBXGroup;
+			children = (
+				83820D3C1A4194F0009E91D3 /* HockeyViewController.swift */,
+			);
+			name = Hockey;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +262,7 @@
 				83820D3A1A40A0F8009E91D3 /* DropViewController.swift in Sources */,
 				83820D381A409C34009E91D3 /* DropTransition.swift in Sources */,
 				836676421A32D972009B31C3 /* AppDelegate.swift in Sources */,
+				83820D3D1A4194F0009E91D3 /* HockeyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
